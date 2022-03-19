@@ -5,7 +5,9 @@ import (
 )
 
 func IsEmptyOrNullString(s string) bool {
-	if strings.TrimSpace(s) == "" {
+	sPointer := &s
+
+	if sPointer == nil || strings.TrimSpace(s) == "" {
 		return true
 	}
 

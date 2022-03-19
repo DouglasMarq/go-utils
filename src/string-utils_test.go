@@ -10,17 +10,27 @@ func TestCorrectString(t *testing.T) {
 	result := IsEmptyOrNullString(s)
 
 	if result != false {
-		t.Errorf("String is Empty or Null %v", result)
+		t.Errorf("Expected string to not be empty or null, but got %v", result)
 	}
 }
 
-func TestWhitespaceString(t *testing.T) {
+func TestCorrectStringWithWhiteSpace(t *testing.T) {
+	s := " not Empty Or Null"
+
+	result := IsEmptyOrNullString(s)
+
+	if result != false {
+		t.Errorf("Expected string to not be empty or null, but got %v", result)
+	}
+}
+
+func TestWhiteSpaceString(t *testing.T) {
 	s := " "
 
 	result := IsEmptyOrNullString(s)
 
 	if result != true {
-		t.Errorf("String is Empty or Null %v", result)
+		t.Errorf("Expected string to be empty or null, but got %v", result)
 	}
 }
 
@@ -30,6 +40,6 @@ func TestBlankString(t *testing.T) {
 	result := IsEmptyOrNullString(s)
 
 	if result != true {
-		t.Errorf("String is Empty or Null %v", result)
+		t.Errorf("Expected string to be empty or null, but got %v", result)
 	}
 }
