@@ -4,7 +4,7 @@ import (
 	"strings"
 )
 
-func CheckForEmptyOrNullString(s string) bool {
+func IsEmptyOrNullString(s string) bool {
 	if strings.TrimSpace(s) == "" {
 		return true
 	}
