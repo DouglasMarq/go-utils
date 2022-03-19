@@ -1,16 +1,10 @@
 package goutils
 
 import (
-	"reflect"
 	"strings"
 )
 
-type stringTypes struct {
-	s string
-	s []string
-}
-
-func CheckForEmptyOrNullString(s string) {
+func CheckForEmptyOrNullString(s string) bool {
 	if strings.TrimSpace(s) == "" {
 		return true
 	}
